@@ -4,7 +4,8 @@ module.exports = {
   proxyTable: [
     {
       api: "/rest",
-      target: "http://122.9.140.231:20001",
+      target: "http://120.133.67.133:20019",
+      // target: "http://122.9.140.231:20001",
     },
   ],
 };
