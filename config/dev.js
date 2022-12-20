@@ -1,9 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const connectHistoryApiFallback = require("connect-history-api-fallback");
 const { port = 8080, proxyTable = [] } = require("../index.js");
 
 const app = express();
+app.use(cors())
 app.use("/", connectHistoryApiFallback());
 app.use("/", express.static("./public")); // 设置静态资源访问路径
 proxyTable.forEach((item) =>
